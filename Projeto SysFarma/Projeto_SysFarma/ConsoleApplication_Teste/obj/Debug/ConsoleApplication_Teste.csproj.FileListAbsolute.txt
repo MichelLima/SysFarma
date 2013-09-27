@@ -1,0 +1,10 @@
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\ConsoleApplication_Teste.exe.config
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\ConsoleApplication_Teste.exe
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\ConsoleApplication_Teste.pdb
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\EntityFramework.dll
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\Repositorio.dll
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\Repositorio.pdb
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\bin\Debug\EntityFramework.xml
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\obj\Debug\ConsoleApplication_Teste.csprojResolveAssemblyReference.cache
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\obj\Debug\ConsoleApplication_Teste.exe
+C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\ConsoleApplication_Teste\obj\Debug\ConsoleApplication_Teste.pdb

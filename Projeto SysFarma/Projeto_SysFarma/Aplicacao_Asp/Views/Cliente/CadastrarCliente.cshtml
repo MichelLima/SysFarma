@@ -1,0 +1,54 @@
+﻿@model Aplicacao_Asp.Models.Cliente
+
+@{
+    ViewBag.Title = "Cadastrar Cliente";
+}
+
+<h2>CadastrarCliente</h2>
+
+@using (Html.BeginForm()) { 
+
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Cadastrar Cliente</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome)
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.cpf)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cpf)
+            @Html.ValidationMessageFor(model => model.cpf)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.dataNascimento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dataNascimento)
+            @Html.ValidationMessageFor(model => model.dataNascimento)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+    
+    @section Scripts{
+        
+        @Scripts.Render("~/bundles/jqueryval")        
+        }
+
+
+
+
+}
+
+   

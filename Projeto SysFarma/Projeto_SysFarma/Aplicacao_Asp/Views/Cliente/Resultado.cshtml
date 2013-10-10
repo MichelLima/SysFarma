@@ -1,0 +1,34 @@
+﻿@model Aplicacao_Asp.Models.Cliente
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<h2>Resultado</h2>
+
+<fieldset>
+
+    <legend>Cliente</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+    
+     <div class="display-label">
+        @Html.DisplayNameFor(model => model.cpf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cpf)
+    </div>
+
+     <div class="display-label">
+        @Html.DisplayNameFor(model => model.dataNascimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataNascimento)
+    </div>
+
+</fieldset>
+@Html.ActionLink("Home", "Index", "Cliente")

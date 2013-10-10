@@ -13,6 +13,7 @@ namespace SysFarma_Asp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+           
            //Rota de url criada para acesso SysAdmim
             routes.MapRoute(
                 name:"painel",

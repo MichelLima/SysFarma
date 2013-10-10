@@ -1,0 +1,44 @@
+﻿@model  SysFarma_Asp.Models.Cliente
+@{
+    ViewBag.Title = "CadastrarCliente";
+}
+
+<h2>CadastrarCliente</h2>
+@Html.BeginForm(){
+
+    
+    @Html.ValidationSummary(true);
+
+<fieldset>
+
+    <legend>Cadastro de Clientes</legend>
+    <div>
+        @Html.LabelFor(Model => Model.nome)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.nome)
+        @Html.ValidationMessageFor(model => model.nome);
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.CPF)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.CPF)
+        @Html.ValidationMessageFor(model => model.CPF);
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.dataNascimento)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.dataNascimento)
+        @Html.ValidationMessageFor(model => model.dataNascimento);
+    </div>
+
+    <p>
+        <input type="submit" value="Cadastrar" />
+    </p>
+</fieldset>
+
+}

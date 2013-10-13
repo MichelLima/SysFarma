@@ -36,10 +36,82 @@
             @Html.ValidationMessageFor(model => model.dataNascimento)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.rua)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.rua)
+            @Html.ValidationMessageFor(model => model.endereco.rua)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.numero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.numero)
+            @Html.ValidationMessageFor(model => model.endereco.numero)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.complemento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.complemento)
+            @Html.ValidationMessageFor(model => model.endereco.complemento)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.cep)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.cep)
+            @Html.ValidationMessageFor(model => model.endereco.cep)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.bairro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.bairro)
+            @Html.ValidationMessageFor(model => model.endereco.bairro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.cidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.cidade)
+            @Html.ValidationMessageFor(model => model.endereco.cidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.endereco.estado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.endereco.estado)
+            @Html.ValidationMessageFor(model => model.endereco.estado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.contato.telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contato.telefone)
+            @Html.ValidationMessageFor(model => model.contato.telefone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(mdel => Model.contato.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contato.email)
+            @Html.ValidationMessageFor(model => model.contato.email)
+        </div>
         <p>
             <input type="submit" value="Salvar" />
         </p>
     </fieldset>
+}
     
     @section Scripts{
         

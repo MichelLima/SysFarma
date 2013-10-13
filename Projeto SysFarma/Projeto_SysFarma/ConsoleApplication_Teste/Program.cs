@@ -16,10 +16,10 @@ namespace ConsoleApplication_Teste
           
             Cliente cliente = new Cliente();
            
-            cliente.nome = "João da Silva";
+          /*  cliente.nome = "João da Silva";
             cliente.cpf = "000.000.000-00";
             repositorio.InserirCliente(cliente);
-               
+            */   
             
         }
     }

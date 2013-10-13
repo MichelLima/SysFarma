@@ -14,6 +14,10 @@ namespace Aplicacao_Asp.Models
         [Required(ErrorMessage="O Campo CPF é obrigatorio")]
      //  [RegularExpression(@"/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/", ErrorMessage = "O CPF deve Seguir o modelo 999.999.999-99")]
         public String cpf { get; set; }
+        [DisplayFormat(DataFormatString= "(dd/mm/yyyy)")]
         public DateTime dataNascimento { get; set; }
+        public Cliente_Endereco endereco { get; set;}
+        public Cliente_Contato contato { get; set; }
+        
     }
 }

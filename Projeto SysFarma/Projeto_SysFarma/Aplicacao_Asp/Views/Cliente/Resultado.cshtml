@@ -30,5 +30,68 @@
         @Html.DisplayFor(model => model.dataNascimento)
     </div>
 
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.rua)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.rua)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.numero)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.complemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.complemento)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.cep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.cep)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.bairro)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.cidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.cidade)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.endereco.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.endereco.estado)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.contato.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contato.email)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.contato.telefone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contato.telefone)
+    </div>
+
+
 </fieldset>
 @Html.ActionLink("Home", "Index", "Cliente")

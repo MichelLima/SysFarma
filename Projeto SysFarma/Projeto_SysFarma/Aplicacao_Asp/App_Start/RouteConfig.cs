@@ -20,7 +20,7 @@ namespace Aplicacao_Asp
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
-            //Rota de url criada para acesso SysAdmim
+           //Rota de url criada para acesso SysAdmim
             routes.MapRoute(
                 name: "painel",
                 url: "Painel",

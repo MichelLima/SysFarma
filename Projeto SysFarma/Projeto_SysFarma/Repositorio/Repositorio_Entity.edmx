@@ -88,7 +88,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="marca" Type="varchar" MaxLength="50" />
           <Property Name="preco" Type="decimal" Precision="10" Scale="2" />

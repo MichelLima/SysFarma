@@ -1,0 +1,76 @@
+﻿@model  SysFarma_Asp.Models.Cliente
+@{
+    ViewBag.Title = "CadastrarCliente";
+}
+
+<h2>Cadastrar Cliente</h2>
+@Html.BeginForm(){
+
+    
+    @Html.ValidationSummary(true)
+
+<fieldset>
+
+    <legend>Cadastro de Clientes</legend>
+    <div>
+        @Html.LabelFor(Model => Model.nome)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.nome)
+        @Html.ValidationMessageFor(model => model.nome)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.CPF)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.CPF)
+        @Html.ValidationMessageFor(model => model.CPF)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.dataNascimento)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.dataNascimento)
+        @Html.ValidationMessageFor(model => model.dataNascimento)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.login)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.login)
+        @Html.ValidationMessageFor(model => model.login)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.senha)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.senha)
+        @Html.ValidationMessageFor(model => model.senha)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.confirmarSenha)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.confirmarSenha)
+        @Html.ValidationMessageFor(model => model.confirmarSenha)
+    </div>
+
+    <p>
+        <input type="submit" value="Cadastrar" />
+    </p>
+</fieldset>
+}
+@Html.ActionLink("Home", "Index","Home")
+
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    }

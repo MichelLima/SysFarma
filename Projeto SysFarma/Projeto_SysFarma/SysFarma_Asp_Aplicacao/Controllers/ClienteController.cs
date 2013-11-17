@@ -17,27 +17,6 @@ namespace SysFarma_Asp.Controllers
     {
         private bd_SysFarmaEntities bd = new bd_SysFarmaEntities();
 
-        //Metodo para postar um formulario
-        public ActionResult CadastrarCliente()
-        {
-
-            return View();
-        }
-        //Metodo que vai receber formulatio 
-        [HttpPost]
-        public ActionResult cadastrarCliente(Cliente cliente)
-        {
-            
-            if (ModelState.IsValid)
-            {
-                Repositorio repositorio = new Repositorio();
-                repositorio.InserirCliente(cliente);
-                return RedirectToAction("CadastroEndereco", "endereco", new { idCliente = cliente.id_Cliente });
-            }
-
-            return View(cliente);
-
-        }
        
         public ActionResult DeletarCliente(int id = 0)
         {
@@ -98,7 +77,7 @@ namespace SysFarma_Asp.Controllers
             List<Cliente> clientes = repositorio.GetTodosClientes();
 
            
-             // Models.ClienteModelList model = new Models.ClienteModelList();
+            // Models.ClienteModelList model = new Models.ClienteModelList();
 
             return View(clientes);
 

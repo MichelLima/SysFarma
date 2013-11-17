@@ -232,7 +232,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cliente\CadastrarCliente.cshtml" />
+    <Content Include="Views\Home\CadastrarCliente.cshtml" />
     <Content Include="Views\Cliente\DeletarCliente.cshtml" />
     <Content Include="Views\Cliente\EditarCliente.cshtml" />
     <Content Include="Views\Cliente\ListarCliente.cshtml" />

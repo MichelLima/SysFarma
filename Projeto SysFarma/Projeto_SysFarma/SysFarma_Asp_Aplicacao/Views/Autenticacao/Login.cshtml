@@ -33,13 +33,15 @@
 
         <p>
             <input type="submit" value="Criar" />
+            @Html.ActionLink("Cadastrar","CadastrarCliente","Home")
+            @Html.ActionLink("Pagina Inicial", "Index","Home")
+
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Pagina Inicial", "Index","Home")
-</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

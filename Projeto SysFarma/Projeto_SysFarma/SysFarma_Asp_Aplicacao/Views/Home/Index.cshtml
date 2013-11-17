@@ -1,9 +1,73 @@
-﻿@{
+﻿@model IEnumerable<Rep.Produto> 
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 <h1>Pagina inicial aqui!</h1>
-@Html.ActionLink("Cadastrar Cliente", "CadastrarCliente", "Cliente")
+@Html.ActionLink("Cadastrar", "CadastrarCliente", "Home")
 @Html.ActionLink("Home", "Index", "Home")
 @Html.ActionLink("Listar Cliente", "ListarCliente", "Cliente")
+
+<table border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.lote)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.validade)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.validade)
+            </td>
+            <td>
+                @Html.ActionLink("Editar produto", "EditarProduto","Produto")
+            </td>
+            <td>
+                @Html.ActionLink("Deletar produto", "DeletarProduto","Produto")
+            
+            </td>
+        </tr>
+        
+    }
+</table>
+

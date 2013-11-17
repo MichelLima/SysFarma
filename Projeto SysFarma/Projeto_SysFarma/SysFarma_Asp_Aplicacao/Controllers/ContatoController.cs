@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using Rep;
+using System.Web.Routing;
 
 namespace SysFarma_Asp_Aplicacao.Controllers
 {
@@ -103,6 +104,23 @@ namespace SysFarma_Asp_Aplicacao.Controllers
 
         }
 
+          protected override void OnActionExecuting(ActionExecutingContext filterContext)
+                {
+                    //Se ele não estiver autenticado E não estiver abrindo a página de login, redirecione para a página Login
+
+                    if (SessaoUsuario.UsuarioLogado == null &&
+                        filterContext.ActionDescriptor.ActionName != "Login")
+                    {
+                
+                        filterContext.Result = new RedirectToRouteResult(
+                        new RouteValueDictionary { { "controller", "Autenticacao" }, { "action", "Login" } });
+
+                        this.TempData["loginObrigatorio"] = "Você precisa estar autenticado para continuar";
+                    }
+
+                    base.OnActionExecuting(filterContext);
+                }
+            }
 
     }
-}
+

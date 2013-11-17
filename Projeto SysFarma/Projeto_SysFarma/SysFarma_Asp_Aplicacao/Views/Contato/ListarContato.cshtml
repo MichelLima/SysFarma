@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Rep.Cliente_Contato>  
+<h2>Listar Contato</h2>
+
+<table border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar Contato", "EditarContato", new { id = item.id, idCliente = item.id_Cliente})
+            </td>
+            <td>
+                @Html.ActionLink("Deletar Contato", "DeletarContato", new { id = item.id, idCliente = item.id_Cliente})
+            </td>
+        </tr>
+        
+    }
+</table>
+
+@Html.ActionLink("Home", "Index","Home")

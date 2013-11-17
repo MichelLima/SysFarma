@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Rep.Cliente>  
+<h2>ListarCliente</h2>
+
+<table border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataNascimento)
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataNascimento)
+            </td>
+            <td>
+                @Html.ActionLink("Editar Cliente", "EditarCliente", new { id = item.id_Cliente})
+                @Html.ActionLink("Deletar Cliente", "DeletarCliente", new { id = item.id_Cliente})
+            </td>
+        </tr>
+        
+    }
+</table>
+
+@Html.ActionLink("Home", "Index","Home")

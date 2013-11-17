@@ -1,0 +1,61 @@
+﻿@model Rep.Cliente
+
+@{
+    ViewBag.Title = "EditarCliente";
+}
+
+<h2>Editar Cliente</h2>
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+<fieldset>
+
+    <legend>Editar Cliente </legend>
+
+        @Html.HiddenFor(Model => Model.id_Cliente)
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.nome)
+    </div>
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.nome)
+        @Html.ValidationMessageFor(Model => Model.nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.cpf)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.cpf)
+        @Html.ValidationMessageFor(Model => Model.cpf)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.dataNascimento)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.dataNascimento)
+        @Html.ValidationMessageFor(Model => Model.dataNascimento)
+    </div>
+
+    <div>
+
+        <input type="submit" value ="Editar" /> 
+        
+    </div>
+ </fieldset>
+}
+    <div>
+
+    @Html.ActionLink("Home", "Index", "Home")
+    
+
+    </div> 
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

@@ -1,0 +1,65 @@
+﻿@model Rep.Produto
+@{
+    ViewBag.Title = "DeletarProduto";
+}
+
+<h2>Deletar Produto</h2>
+@Html.BeginForm(){
+
+<fieldset>
+    <legend>Produtos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.marca)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.marca)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.preco)
+    </div>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tipo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tipo)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.lote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lote)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.validade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.validade)
+    </div>
+    <p>
+
+        <input type="submit" value="Deletar" />
+        @Html.ActionLink("Home", "Index", "home")
+    </p>
+    
+</fieldset>
+}
+

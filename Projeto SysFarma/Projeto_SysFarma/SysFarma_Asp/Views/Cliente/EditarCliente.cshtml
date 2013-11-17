@@ -1,0 +1,57 @@
+﻿@model Rep.Cliente
+
+@{
+    ViewBag.Title = "EditarCliente";
+}
+
+<h2>EditarCliente</h2>
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+<fieldset>
+
+    <legend>Editar Cliente </legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.nome);
+    </div>
+
+    <div class="display-fields">
+        @Html.DisplayFor(Model => Model.nome);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.cpf);
+    </div>
+
+    <div class="display-fields">
+        @Html.DisplayFor(Model => Model.cpf);
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.dataNascimento);
+    </div>
+
+    <div class="display-fields">
+        @Html.DisplayFor(Model => Model.dataNascimento);
+    </div>
+
+    <div>
+
+        <input type="submit" value ="Editar" /> 
+        
+    </div>
+ </fieldset>
+}
+    <div>
+
+    @Html.ActionLink("Home", "Index", "Cliente");
+    
+
+    </div> 
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

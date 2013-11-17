@@ -1,0 +1,85 @@
+﻿@model Rep.Produto
+
+@{
+    ViewBag.Title = "EditarProduto";
+}
+
+<h2>Editar Produto</h2>
+
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+<fieldset>
+
+    <legend>Editar Produto </legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.nome)
+    </div>
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.nome)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.marca)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.marca)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.preco)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.preco)
+    </div>
+
+     <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.tipo)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.tipo)
+    </div>
+
+     <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.lote)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.lote)
+    </div>
+
+     <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.descricao)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.descricao)
+    </div>
+     <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.validade)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.validade)
+    </div>
+    <div>
+        <input type="submit" value ="Editar" /> 
+    </div>
+ </fieldset>
+}
+    <div>
+
+    @Html.ActionLink("Home", "Index", "Cliente");
+    
+
+    </div> 
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    }

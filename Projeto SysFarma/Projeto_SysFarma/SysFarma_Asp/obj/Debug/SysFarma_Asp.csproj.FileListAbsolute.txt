@@ -60,3 +60,5 @@ C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysF
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysFarma_Asp\obj\Debug\SysFarma_Asp.csprojResolveAssemblyReference.cache
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysFarma_Asp\obj\Debug\SysFarma_Asp.dll
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysFarma_Asp\obj\Debug\SysFarma_Asp.pdb
+C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysFarma_Asp\bin\EntityFramework.SqlServer.dll
+C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\SysFarma_Asp\bin\EntityFramework.SqlServer.xml

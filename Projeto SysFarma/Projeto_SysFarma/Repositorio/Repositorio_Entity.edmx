@@ -6,52 +6,45 @@
     <edmx:StorageModels>
     <Schema Namespace="bd_SysFarmaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="bd_SysFarmaModelStoreContainer">
-          <EntitySet Name="Tabela_Pedido" EntityType="bd_SysFarmaModel.Store.Tabela_Pedido" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tbl_Cliente" EntityType="bd_SysFarmaModel.Store.tbl_Cliente" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tbl_Cliente_Contato" EntityType="bd_SysFarmaModel.Store.tbl_Cliente_Contato" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tbl_Cliente_Endereco" EntityType="bd_SysFarmaModel.Store.tbl_Cliente_Endereco" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tbl_Pedido_Produto" EntityType="bd_SysFarmaModel.Store.Tbl_Pedido_Produto" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tbl_Produto" EntityType="bd_SysFarmaModel.Store.tbl_Produto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente" EntityType="bd_SysFarmaModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente_Contato" EntityType="bd_SysFarmaModel.Store.Cliente_Contato" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente_Endereco" EntityType="bd_SysFarmaModel.Store.Cliente_Endereco" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pedido" EntityType="bd_SysFarmaModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pedido_Produto" EntityType="bd_SysFarmaModel.Store.Pedido_Produto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Produto" EntityType="bd_SysFarmaModel.Store.Produto" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Tabela_Pedido_tbl_Cliente" Association="bd_SysFarmaModel.Store.FK_Tabela_Pedido_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="tbl_Cliente" />
-            <End Role="Tabela_Pedido" EntitySet="Tabela_Pedido" />
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
           <AssociationSet Name="FK_tbl_Cliente_Contato_tbl_Cliente" Association="bd_SysFarmaModel.Store.FK_tbl_Cliente_Contato_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="tbl_Cliente" />
-            <End Role="tbl_Cliente_Contato" EntitySet="tbl_Cliente_Contato" />
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente_Contato" EntitySet="Cliente_Contato" />
           </AssociationSet>
           <AssociationSet Name="FK_tbl_Cliente_Endereco_tbl_Cliente" Association="bd_SysFarmaModel.Store.FK_tbl_Cliente_Endereco_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="tbl_Cliente" />
-            <End Role="tbl_Cliente_Endereco" EntitySet="tbl_Cliente_Endereco" />
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente_Endereco" EntitySet="Cliente_Endereco" />
           </AssociationSet>
           <AssociationSet Name="FK_Tbl_Pedido_Produto_Tabela_Pedido" Association="bd_SysFarmaModel.Store.FK_Tbl_Pedido_Produto_Tabela_Pedido">
-            <End Role="Tabela_Pedido" EntitySet="Tabela_Pedido" />
-            <End Role="Tbl_Pedido_Produto" EntitySet="Tbl_Pedido_Produto" />
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Pedido_Produto" EntitySet="Pedido_Produto" />
           </AssociationSet>
           <AssociationSet Name="FK_Tbl_Pedido_Produto_tbl_Produto" Association="bd_SysFarmaModel.Store.FK_Tbl_Pedido_Produto_tbl_Produto">
-            <End Role="tbl_Produto" EntitySet="tbl_Produto" />
-            <End Role="Tbl_Pedido_Produto" EntitySet="Tbl_Pedido_Produto" />
+            <End Role="Produto" EntitySet="Produto" />
+            <End Role="Pedido_Produto" EntitySet="Pedido_Produto" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Tabela_Pedido">
-          <Key>
-            <PropertyRef Name="numero" />
-          </Key>
-          <Property Name="numero" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="valor" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="id_Cliente" Type="int" Nullable="false" />
-          <Property Name="data" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_Cliente">
+        <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="id_Cliente" />
           </Key>
           <Property Name="id_Cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="nome" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="11" />
-          <Property Name="dataNascimento" Type="datetime" />
+          <Property Name="dataNascimento" Type="smalldatetime" />
+          <Property Name="login" Type="varchar" MaxLength="50" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="tbl_Cliente_Contato">
+        <EntityType Name="Cliente_Contato">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -60,7 +53,7 @@
           <Property Name="telefone" Type="varchar" MaxLength="10" />
           <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="tbl_Cliente_Endereco">
+        <EntityType Name="Cliente_Endereco">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -74,7 +67,16 @@
           <Property Name="cidade" Type="varchar" MaxLength="30" />
           <Property Name="estado" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="Tbl_Pedido_Produto">
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="id_Cliente" Type="int" Nullable="false" />
+          <Property Name="data" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pedido_Produto">
           <Key>
             <PropertyRef Name="id" />
             <PropertyRef Name="numero" />
@@ -82,7 +84,7 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="numero" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="tbl_Produto">
+        <EntityType Name="Produto">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -93,64 +95,64 @@
           <Property Name="tipo" Type="varchar" MaxLength="50" />
           <Property Name="lote" Type="varchar" MaxLength="50" />
           <Property Name="descricao" Type="varchar" MaxLength="200" />
-          <Property Name="validade" Type="datetime" />
+          <Property Name="validade" Type="smalldatetime" />
         </EntityType>
         <Association Name="FK_Tabela_Pedido_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Store.tbl_Cliente" Multiplicity="1" />
-          <End Role="Tabela_Pedido" Type="bd_SysFarmaModel.Store.Tabela_Pedido" Multiplicity="*" />
+          <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Pedido" Type="bd_SysFarmaModel.Store.Pedido" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="Tabela_Pedido">
+            <Dependent Role="Pedido">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tbl_Cliente_Contato_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Store.tbl_Cliente" Multiplicity="1" />
-          <End Role="tbl_Cliente_Contato" Type="bd_SysFarmaModel.Store.tbl_Cliente_Contato" Multiplicity="*" />
+          <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cliente_Contato" Type="bd_SysFarmaModel.Store.Cliente_Contato" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="tbl_Cliente_Contato">
+            <Dependent Role="Cliente_Contato">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tbl_Cliente_Endereco_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Store.tbl_Cliente" Multiplicity="1" />
-          <End Role="tbl_Cliente_Endereco" Type="bd_SysFarmaModel.Store.tbl_Cliente_Endereco" Multiplicity="*" />
+          <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cliente_Endereco" Type="bd_SysFarmaModel.Store.Cliente_Endereco" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="tbl_Cliente_Endereco">
+            <Dependent Role="Cliente_Endereco">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_Pedido_Produto_Tabela_Pedido">
-          <End Role="Tabela_Pedido" Type="bd_SysFarmaModel.Store.Tabela_Pedido" Multiplicity="1" />
-          <End Role="Tbl_Pedido_Produto" Type="bd_SysFarmaModel.Store.Tbl_Pedido_Produto" Multiplicity="*" />
+          <End Role="Pedido" Type="bd_SysFarmaModel.Store.Pedido" Multiplicity="1" />
+          <End Role="Pedido_Produto" Type="bd_SysFarmaModel.Store.Pedido_Produto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Tabela_Pedido">
+            <Principal Role="Pedido">
               <PropertyRef Name="numero" />
             </Principal>
-            <Dependent Role="Tbl_Pedido_Produto">
+            <Dependent Role="Pedido_Produto">
               <PropertyRef Name="numero" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_Pedido_Produto_tbl_Produto">
-          <End Role="tbl_Produto" Type="bd_SysFarmaModel.Store.tbl_Produto" Multiplicity="1" />
-          <End Role="Tbl_Pedido_Produto" Type="bd_SysFarmaModel.Store.Tbl_Pedido_Produto" Multiplicity="*" />
+          <End Role="Produto" Type="bd_SysFarmaModel.Store.Produto" Multiplicity="1" />
+          <End Role="Pedido_Produto" Type="bd_SysFarmaModel.Store.Pedido_Produto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Produto">
+            <Principal Role="Produto">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Tbl_Pedido_Produto">
+            <Dependent Role="Pedido_Produto">
               <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
@@ -160,129 +162,131 @@
     <edmx:ConceptualModels>
       <Schema Namespace="bd_SysFarmaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="bd_SysFarmaEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Tabela_Pedido" EntityType="bd_SysFarmaModel.Tabela_Pedido" />
           <EntitySet Name="Cliente" EntityType="bd_SysFarmaModel.Cliente" />
-          <EntitySet Name="Cliente_Contato" EntityType="bd_SysFarmaModel.Cliente_Contato" />
-          <EntitySet Name="Cliente_Endereco" EntityType="bd_SysFarmaModel.Cliente_Endereco" />
+          <EntitySet Name="Cliente_ContatoSet" EntityType="bd_SysFarmaModel.Cliente_Contato" />
+          <EntitySet Name="Cliente_EnderecoSet" EntityType="bd_SysFarmaModel.Cliente_Endereco" />
+          <EntitySet Name="Pedido" EntityType="bd_SysFarmaModel.Pedido" />
           <EntitySet Name="Produto" EntityType="bd_SysFarmaModel.Produto" />
-          <AssociationSet Name="FK_Tabela_Pedido_tbl_Cliente" Association="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="Cliente" />
-            <End Role="Tabela_Pedido" EntitySet="Tabela_Pedido" />
+          <AssociationSet Name="FK_Tabela_Pedido_tbl_Cliente1" Association="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente1">
+            <End Role="Cliente1" EntitySet="Cliente" />
+            <End Role="Pedido" EntitySet="Pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK_tbl_Cliente_Contato_tbl_Cliente" Association="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="Cliente" />
-            <End Role="tbl_Cliente_Contato" EntitySet="Cliente_Contato" />
+          <AssociationSet Name="FK_tbl_Cliente_Contato_tbl_Cliente1" Association="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente1">
+            <End Role="Cliente1" EntitySet="Cliente" />
+            <End Role="Cliente_Contato1" EntitySet="Cliente_ContatoSet" />
           </AssociationSet>
-          <AssociationSet Name="FK_tbl_Cliente_Endereco_tbl_Cliente" Association="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente">
-            <End Role="tbl_Cliente" EntitySet="Cliente" />
-            <End Role="tbl_Cliente_Endereco" EntitySet="Cliente_Endereco" />
+          <AssociationSet Name="FK_tbl_Cliente_Endereco_tbl_Cliente1" Association="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente1">
+            <End Role="Cliente1" EntitySet="Cliente" />
+            <End Role="Cliente_Endereco1" EntitySet="Cliente_EnderecoSet" />
           </AssociationSet>
-          <AssociationSet Name="Tbl_Pedido_Produto" Association="bd_SysFarmaModel.Tbl_Pedido_Produto">
-            <End Role="Tabela_Pedido" EntitySet="Tabela_Pedido" />
-            <End Role="tbl_Produto" EntitySet="Produto" />
+          <AssociationSet Name="Pedido_Produto" Association="bd_SysFarmaModel.Pedido_Produto">
+            <End Role="Pedido" EntitySet="Pedido" />
+            <End Role="Produto1" EntitySet="Produto" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Tabela_Pedido">
-          <Key>
-            <PropertyRef Name="numero" />
-          </Key>
-          <Property Name="numero" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="valor" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="id_Cliente" Type="Int32" Nullable="false" />
-          <Property Name="data" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="tbl_Cliente" Relationship="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente" FromRole="Tabela_Pedido" ToRole="tbl_Cliente" />
-          <NavigationProperty Name="tbl_Produto" Relationship="bd_SysFarmaModel.Tbl_Pedido_Produto" FromRole="Tabela_Pedido" ToRole="tbl_Produto" />
-        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="id_Cliente" />
           </Key>
-          <Property Name="id_Cliente" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="cpf" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
-          <Property Name="dataNascimento" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Tabela_Pedido" Relationship="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente" FromRole="tbl_Cliente" ToRole="Tabela_Pedido" />
-          <NavigationProperty Name="tbl_Cliente_Contato" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente" FromRole="tbl_Cliente" ToRole="tbl_Cliente_Contato" />
-          <NavigationProperty Name="tbl_Cliente_Endereco" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente" FromRole="tbl_Cliente" ToRole="tbl_Cliente_Endereco" />
+          <Property Type="Int32" Name="id_Cliente" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cpf" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dataNascimento" Precision="0" />
+          <NavigationProperty Name="Pedido" Relationship="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente1" FromRole="Cliente1" ToRole="Pedido" />
+          <NavigationProperty Name="Cliente_Contato" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente1" FromRole="Cliente1" ToRole="Cliente_Contato1" />
+          <NavigationProperty Name="Cliente_Endereco" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente1" FromRole="Cliente1" ToRole="Cliente_Endereco1" />
+          <Property Type="String" Name="login" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Senha" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Cliente_Contato">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="id_Cliente" Type="Int32" Nullable="false" />
-          <Property Name="telefone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tbl_Cliente" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente" FromRole="tbl_Cliente_Contato" ToRole="tbl_Cliente" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_Cliente" Nullable="false" />
+          <Property Type="String" Name="telefone" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cliente" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente1" FromRole="Cliente_Contato1" ToRole="Cliente1" />
         </EntityType>
         <EntityType Name="Cliente_Endereco">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="id_Cliente" Type="Int32" Nullable="false" />
-          <Property Name="rua" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="numero" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
-          <Property Name="complemento" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="cep" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="bairro" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <Property Name="cidade" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="estado" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tbl_Cliente" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente" FromRole="tbl_Cliente_Endereco" ToRole="tbl_Cliente" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_Cliente" Nullable="false" />
+          <Property Type="String" Name="rua" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="numero" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="complemento" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cep" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="bairro" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cidade" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="estado" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cliente" Relationship="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente1" FromRole="Cliente_Endereco1" ToRole="Cliente1" />
+        </EntityType>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Type="Int32" Name="numero" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="valor" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="id_Cliente" Nullable="false" />
+          <Property Type="DateTime" Name="data" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Cliente" Relationship="bd_SysFarmaModel.FK_Tabela_Pedido_tbl_Cliente1" FromRole="Pedido" ToRole="Cliente1" />
+          <NavigationProperty Name="Produto" Relationship="bd_SysFarmaModel.Pedido_Produto" FromRole="Pedido" ToRole="Produto1" />
         </EntityType>
         <EntityType Name="Produto">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="marca" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="preco" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="tipo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="lote" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="descricao" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-          <Property Name="validade" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Tabela_Pedido" Relationship="bd_SysFarmaModel.Tbl_Pedido_Produto" FromRole="tbl_Produto" ToRole="Tabela_Pedido" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="marca" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="preco" Precision="10" Scale="2" />
+          <Property Type="String" Name="tipo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="lote" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descricao" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="validade" Precision="0" />
+          <NavigationProperty Name="Pedido" Relationship="bd_SysFarmaModel.Pedido_Produto" FromRole="Produto1" ToRole="Pedido" />
         </EntityType>
-        <Association Name="FK_Tabela_Pedido_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Cliente" Multiplicity="1" />
-          <End Role="Tabela_Pedido" Type="bd_SysFarmaModel.Tabela_Pedido" Multiplicity="*" />
+        <Association Name="FK_Tabela_Pedido_tbl_Cliente1">
+          <End Type="bd_SysFarmaModel.Cliente" Role="Cliente1" Multiplicity="1" />
+          <End Type="bd_SysFarmaModel.Pedido" Role="Pedido" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente1">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="Tabela_Pedido">
+            <Dependent Role="Pedido">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tbl_Cliente_Contato_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Cliente" Multiplicity="1" />
-          <End Role="tbl_Cliente_Contato" Type="bd_SysFarmaModel.Cliente_Contato" Multiplicity="*" />
+        <Association Name="FK_tbl_Cliente_Contato_tbl_Cliente1">
+          <End Type="bd_SysFarmaModel.Cliente" Role="Cliente1" Multiplicity="1" />
+          <End Type="bd_SysFarmaModel.Cliente_Contato" Role="Cliente_Contato1" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente1">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="tbl_Cliente_Contato">
+            <Dependent Role="Cliente_Contato1">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tbl_Cliente_Endereco_tbl_Cliente">
-          <End Role="tbl_Cliente" Type="bd_SysFarmaModel.Cliente" Multiplicity="1" />
-          <End Role="tbl_Cliente_Endereco" Type="bd_SysFarmaModel.Cliente_Endereco" Multiplicity="*" />
+        <Association Name="FK_tbl_Cliente_Endereco_tbl_Cliente1">
+          <End Type="bd_SysFarmaModel.Cliente" Role="Cliente1" Multiplicity="1" />
+          <End Type="bd_SysFarmaModel.Cliente_Endereco" Role="Cliente_Endereco1" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tbl_Cliente">
+            <Principal Role="Cliente1">
               <PropertyRef Name="id_Cliente" />
             </Principal>
-            <Dependent Role="tbl_Cliente_Endereco">
+            <Dependent Role="Cliente_Endereco1">
               <PropertyRef Name="id_Cliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Tbl_Pedido_Produto">
-          <End Role="Tabela_Pedido" Type="bd_SysFarmaModel.Tabela_Pedido" Multiplicity="*" />
-          <End Role="tbl_Produto" Type="bd_SysFarmaModel.Produto" Multiplicity="*" />
+        <Association Name="Pedido_Produto">
+          <End Type="bd_SysFarmaModel.Pedido" Role="Pedido" Multiplicity="*" />
+          <End Type="bd_SysFarmaModel.Produto" Role="Produto1" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -290,71 +294,73 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="bd_SysFarmaModelStoreContainer" CdmEntityContainer="bd_SysFarmaEntities">
-          <EntitySetMapping Name="Tabela_Pedido">
-            <EntityTypeMapping TypeName="bd_SysFarmaModel.Tabela_Pedido">
-              <MappingFragment StoreEntitySet="Tabela_Pedido">
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="valor" ColumnName="valor" />
-                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-                <ScalarProperty Name="data" ColumnName="data" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente">
-              <MappingFragment StoreEntitySet="tbl_Cliente">
-                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-                <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="cpf" ColumnName="cpf" />
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cliente_Contato">
+          <EntitySetMapping Name="Cliente_ContatoSet">
             <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente_Contato">
-              <MappingFragment StoreEntitySet="tbl_Cliente_Contato">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-                <ScalarProperty Name="telefone" ColumnName="telefone" />
+              <MappingFragment StoreEntitySet="Cliente_Contato">
                 <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cliente_Endereco">
+          <EntitySetMapping Name="Cliente_EnderecoSet">
             <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente_Endereco">
-              <MappingFragment StoreEntitySet="tbl_Cliente_Endereco">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-                <ScalarProperty Name="rua" ColumnName="rua" />
-                <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="complemento" ColumnName="complemento" />
-                <ScalarProperty Name="cep" ColumnName="cep" />
-                <ScalarProperty Name="bairro" ColumnName="bairro" />
-                <ScalarProperty Name="cidade" ColumnName="cidade" />
+              <MappingFragment StoreEntitySet="Cliente_Endereco">
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="complemento" ColumnName="complemento" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pedido">
+            <EntityTypeMapping TypeName="bd_SysFarmaModel.Pedido">
+              <MappingFragment StoreEntitySet="Pedido">
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Produto">
             <EntityTypeMapping TypeName="bd_SysFarmaModel.Produto">
-              <MappingFragment StoreEntitySet="tbl_Produto">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nome" ColumnName="nome" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="preco" ColumnName="preco" />
-                <ScalarProperty Name="tipo" ColumnName="tipo" />
-                <ScalarProperty Name="lote" ColumnName="lote" />
-                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              <MappingFragment StoreEntitySet="Produto">
                 <ScalarProperty Name="validade" ColumnName="validade" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="lote" ColumnName="lote" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="preco" ColumnName="preco" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Tbl_Pedido_Produto" TypeName="bd_SysFarmaModel.Tbl_Pedido_Produto" StoreEntitySet="Tbl_Pedido_Produto">
-            <EndProperty Name="Tabela_Pedido">
-              <ScalarProperty Name="numero" ColumnName="numero" />
-            </EndProperty>
-            <EndProperty Name="tbl_Produto">
+          <AssociationSetMapping Name="Pedido_Produto" TypeName="bd_SysFarmaModel.Pedido_Produto" StoreEntitySet="Pedido_Produto">
+            <EndProperty Name="Produto1">
               <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="Pedido">
+              <ScalarProperty Name="numero" ColumnName="numero" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

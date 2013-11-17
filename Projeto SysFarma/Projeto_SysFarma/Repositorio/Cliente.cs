@@ -16,18 +16,20 @@ namespace Rep
     {
         public Cliente()
         {
-            this.Tabela_Pedido = new HashSet<Tabela_Pedido>();
-            this.tbl_Cliente_Contato = new HashSet<Cliente_Contato>();
-            this.tbl_Cliente_Endereco = new HashSet<Cliente_Endereco>();
+            this.Pedido = new HashSet<Pedido>();
+            this.Cliente_Contato = new HashSet<Cliente_Contato>();
+            this.Cliente_Endereco = new HashSet<Cliente_Endereco>();
         }
     
         public int id_Cliente { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }
         public Nullable<System.DateTime> dataNascimento { get; set; }
+        public string login { get; set; }
+        public string Senha { get; set; }
     
-        public virtual ICollection<Tabela_Pedido> Tabela_Pedido { get; set; }
-        public virtual ICollection<Cliente_Contato> tbl_Cliente_Contato { get; set; }
-        public virtual ICollection<Cliente_Endereco> tbl_Cliente_Endereco { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
+        public virtual ICollection<Cliente_Contato> Cliente_Contato { get; set; }
+        public virtual ICollection<Cliente_Endereco> Cliente_Endereco { get; set; }
     }
 }

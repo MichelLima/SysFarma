@@ -24,6 +24,6 @@ namespace Rep
         public string cidade { get; set; }
         public string estado { get; set; }
     
-        public virtual Cliente tbl_Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

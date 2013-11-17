@@ -1,0 +1,76 @@
+﻿@model Rep.Cliente_Endereco
+
+@{
+    ViewBag.Title = "AlterarEndereco";
+}
+
+<h2>Editar Endereco</h2>
+
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+<fieldset>
+
+    
+    <legend>Editar Cliente </legend>
+    
+    @Html.Hidden("idClienteIserido",(int) ViewBag.idCliente)
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.rua)
+    </div>
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.rua)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.numero)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.numero)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.complemento)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.complemento)
+    </div>
+
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.bairro)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.bairro)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.cidade)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.cidade)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(Model => Model.estado)
+    </div>
+
+    <div class="display-fields">
+        @Html.EditorFor(Model => Model.estado)
+    </div>
+    <div>
+        <input type="submit" value ="Editar" /> 
+         @Html.ActionLink("Home", "Index", "Cliente")
+    </div>
+ </fieldset>
+}
+   
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    }

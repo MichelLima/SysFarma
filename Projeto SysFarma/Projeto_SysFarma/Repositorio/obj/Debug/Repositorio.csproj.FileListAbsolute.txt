@@ -6,7 +6,6 @@ C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_
 C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.dll
 C:\Users\Michel\Desktop\Area de Trabalho Visual Studio\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.pdb
-C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.dll
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\Repositorio.dll.config
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\Repositorio.dll
@@ -14,3 +13,6 @@ C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repo
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\EntityFramework.dll
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\EntityFramework.xml
 C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.pdb
+C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Michel\Documents\GitHub\SysFarma\Projeto SysFarma\Projeto_SysFarma\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache

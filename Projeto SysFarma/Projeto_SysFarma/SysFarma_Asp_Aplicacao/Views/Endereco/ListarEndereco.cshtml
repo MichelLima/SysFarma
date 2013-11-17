@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Rep.Cliente_Endereco>  
+<h2>ListarEndereco</h2>
+
+<table border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.rua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.complemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.rua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.complemento)
+            </td>
+            <th>
+            @Html.DisplayFor(model => item.cep)
+        </th>
+            <th>
+            @Html.DisplayFor(model => item.bairro)
+        </th>
+            <th>
+            @Html.DisplayFor(model => item.cidade)
+        </th>
+            <th>
+            @Html.DisplayFor(model => item.estado)
+        </th>
+            <td>
+                @Html.ActionLink("Editar Endereco", "AlterarEndereco", new { id = item.id, id_Cliente = item.id_Cliente})
+            </td>
+            <td>
+                @Html.ActionLink("Deletar Endereco", "DeletarEndereco", new { id = item.id, id_Cliente = item.id_Cliente})
+            
+            </td>
+        </tr>
+        
+    }
+</table>
+
+@Html.ActionLink("Home", "Index","Home")

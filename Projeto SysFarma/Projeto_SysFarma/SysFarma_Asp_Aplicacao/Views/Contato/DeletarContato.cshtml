@@ -1,0 +1,26 @@
+﻿@model Rep.Cliente_Contato
+@{
+    ViewBag.Title = "DeletarContato";
+}
+
+<h2>Deletar Contato</h2>
+@Html.BeginForm(){
+
+<fieldset>
+    <legend>Contato</legend>
+    @Html.Hidden("idClienteInserido", (int)ViewBag.id_Cliente)
+   
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>    
+    <p>
+        <input type="submit" value="Deletar" />
+        @Html.ActionLink("Home", "Index", ("home"))
+    </p>
+    
+</fieldset>
+}
+

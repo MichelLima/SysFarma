@@ -1,0 +1,42 @@
+﻿@model  SysFarma_Asp.Models.ContatoCliente
+@{
+    ViewBag.Title = "CadastrarContato";
+}
+
+<h2>Cadastrar Contato</h2>
+@Html.BeginForm(){
+
+    
+    @Html.ValidationSummary(true);
+
+<fieldset>
+     @Html.Hidden("idclienteInserido", (int)ViewBag.idCliente);
+
+    <legend>Cadastro de Contato</legend>
+    <div>
+        @Html.LabelFor(Model => Model.telefone)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.telefone)
+        @Html.ValidationMessageFor(model => model.telefone);
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.email)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.email)
+        @Html.ValidationMessageFor(model => model.email);
+    </div>
+    <p>
+        <input type="submit" value="Cadastrar" />
+    </p>
+</fieldset>
+
+}
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

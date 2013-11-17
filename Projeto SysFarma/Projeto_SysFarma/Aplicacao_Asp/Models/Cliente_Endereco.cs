@@ -8,7 +8,6 @@ namespace Aplicacao_Asp.Models
     public class Cliente_Endereco: Cliente
      {
          public int id { get; set; }
-         public Cliente id_Cliente { get; set; }
          public String rua  { get; set; }
          public int numero { get; set; }
          public String complemento { get; set; }

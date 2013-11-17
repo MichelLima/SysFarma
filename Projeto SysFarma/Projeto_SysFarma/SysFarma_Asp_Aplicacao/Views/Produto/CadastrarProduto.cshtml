@@ -1,0 +1,79 @@
+﻿@model SysFarma_Asp.Models.Produto
+
+@{
+    ViewBag.Title = "CadastrarProduto";
+}
+
+<h2>Cadastrar Produto</h2>
+
+@Html.BeginForm(){
+
+    @Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Cadastrar Produtos</legend>
+
+    <div>
+        @Html.LabelFor(model => model.nome)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.nome)
+        @Html.ValidationMessageFor(model => model.nome)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.marca)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.marca)
+        @Html.ValidationMessageFor(model => model.marca)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.preco)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.preco)
+        @Html.ValidationMessageFor(model => model.preco)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.tipo)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.tipo)
+        @Html.ValidationMessageFor(model => model.tipo)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.lote)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.lote)
+        @Html.ValidationMessageFor(model => model.lote)
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.descricao)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.descricao)
+        @Html.ValidationMessageFor(model => model.descricao)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.validade)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.validade)
+        @Html.ValidationMessageFor(model => model.validade)
+    </div>
+    <p>
+
+        <input type="submit" value="Cadastrar Produto"  />
+     </p>
+
+</fieldset>
+}
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    }

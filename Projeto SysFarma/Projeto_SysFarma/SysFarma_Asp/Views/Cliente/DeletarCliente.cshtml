@@ -1,0 +1,41 @@
+﻿@model Rep.Cliente
+@{
+    ViewBag.Title = "DeletarCliente";
+}
+
+<h2>DeletarCliente</h2>
+@Html.BeginForm(){
+
+<fieldset>
+    <legend>Cliente</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cpf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cpf)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dataNascimento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataNascimento)
+    </div>
+  
+    <p>
+
+        <input type="submit" value="Deletar" />
+
+    </p>
+    }
+</fieldset>
+
+@Html.ActionLink("Home", "Index", ("home"))

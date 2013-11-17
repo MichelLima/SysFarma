@@ -1,0 +1,86 @@
+﻿@model Rep.Cliente_Endereco
+
+@{
+    ViewBag.Title = "CadastroEndereco";
+}
+
+<h2>Cadastrar Endereco</h2>
+
+@Html.BeginForm(){
+@Html.ValidationSummary(true)
+<fieldset>
+    <legend>Cadastrar Endereço</legend>
+
+    @Html.Hidden("idclienteInserido", (int)ViewBag.idCliente)
+
+     <div>
+        @Html.LabelFor(Model => Model.rua)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.rua)
+        @Html.ValidationMessageFor(model => model.rua)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.numero)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.numero)
+        @Html.ValidationMessageFor(model => model.numero)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.complemento)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.complemento)
+        @Html.ValidationMessageFor(model => model.complemento)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.cep)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.cep)
+        @Html.ValidationMessageFor(model => model.cep)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.bairro)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.bairro)
+        @Html.ValidationMessageFor(model => model.bairro)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.cidade)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.cidade)
+        @Html.ValidationMessageFor(model => model.cidade)
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.estado)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.estado)
+        @Html.ValidationMessageFor(model => model.estado)
+    </div>
+    <p>
+        <input type="submit" value="ProximoPasso" />
+    </p>
+</fieldset>
+
+<div>
+    @Html.ActionLink("Voltar", "CadastrarCliente", "Cliente")
+    
+</div>
+
+}
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

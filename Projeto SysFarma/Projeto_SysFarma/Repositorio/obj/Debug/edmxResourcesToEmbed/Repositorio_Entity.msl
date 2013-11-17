@@ -1,71 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="bd_SysFarmaModelStoreContainer" CdmEntityContainer="bd_SysFarmaEntities">
-    <EntitySetMapping Name="Tabela_Pedido">
-      <EntityTypeMapping TypeName="bd_SysFarmaModel.Tabela_Pedido">
-        <MappingFragment StoreEntitySet="Tabela_Pedido">
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="valor" ColumnName="valor" />
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-          <ScalarProperty Name="data" ColumnName="data" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente">
-        <MappingFragment StoreEntitySet="tbl_Cliente">
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-          <ScalarProperty Name="nome" ColumnName="nome" />
-          <ScalarProperty Name="cpf" ColumnName="cpf" />
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="login" ColumnName="login" />
           <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cliente_Contato">
+    <EntitySetMapping Name="Cliente_ContatoSet">
       <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente_Contato">
-        <MappingFragment StoreEntitySet="tbl_Cliente_Contato">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-          <ScalarProperty Name="telefone" ColumnName="telefone" />
+        <MappingFragment StoreEntitySet="Cliente_Contato">
           <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cliente_Endereco">
+    <EntitySetMapping Name="Cliente_EnderecoSet">
       <EntityTypeMapping TypeName="bd_SysFarmaModel.Cliente_Endereco">
-        <MappingFragment StoreEntitySet="tbl_Cliente_Endereco">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
-          <ScalarProperty Name="rua" ColumnName="rua" />
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="complemento" ColumnName="complemento" />
-          <ScalarProperty Name="cep" ColumnName="cep" />
-          <ScalarProperty Name="bairro" ColumnName="bairro" />
-          <ScalarProperty Name="cidade" ColumnName="cidade" />
+        <MappingFragment StoreEntitySet="Cliente_Endereco">
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="complemento" ColumnName="complemento" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="bd_SysFarmaModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Produto">
       <EntityTypeMapping TypeName="bd_SysFarmaModel.Produto">
-        <MappingFragment StoreEntitySet="tbl_Produto">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nome" ColumnName="nome" />
-          <ScalarProperty Name="marca" ColumnName="marca" />
-          <ScalarProperty Name="preco" ColumnName="preco" />
-          <ScalarProperty Name="tipo" ColumnName="tipo" />
-          <ScalarProperty Name="lote" ColumnName="lote" />
-          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        <MappingFragment StoreEntitySet="Produto">
           <ScalarProperty Name="validade" ColumnName="validade" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="lote" ColumnName="lote" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Tbl_Pedido_Produto" TypeName="bd_SysFarmaModel.Tbl_Pedido_Produto" StoreEntitySet="Tbl_Pedido_Produto">
-      <EndProperty Name="Tabela_Pedido">
-        <ScalarProperty Name="numero" ColumnName="numero" />
-      </EndProperty>
-      <EndProperty Name="tbl_Produto">
+    <AssociationSetMapping Name="Pedido_Produto" TypeName="bd_SysFarmaModel.Pedido_Produto" StoreEntitySet="Pedido_Produto">
+      <EndProperty Name="Produto1">
         <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <EndProperty Name="Pedido">
+        <ScalarProperty Name="numero" ColumnName="numero" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

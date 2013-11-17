@@ -19,6 +19,6 @@ namespace Rep
         public string telefone { get; set; }
         public string email { get; set; }
     
-        public virtual Cliente tbl_Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace Rep
     {
         public Produto()
         {
-            this.Tabela_Pedido = new HashSet<Tabela_Pedido>();
+            this.Pedido = new HashSet<Pedido>();
         }
     
         public int id { get; set; }
@@ -28,6 +28,6 @@ namespace Rep
         public string descricao { get; set; }
         public Nullable<System.DateTime> validade { get; set; }
     
-        public virtual ICollection<Tabela_Pedido> Tabela_Pedido { get; set; }
+        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

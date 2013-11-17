@@ -1,0 +1,50 @@
+﻿@model Rep.Cliente_Contato
+
+@{
+    ViewBag.Title = "EditarContato";
+}
+
+<h2>Editar Contato</h2>
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+
+<fieldset>
+
+            <legend>Editar Contato </legend>
+
+                @Html.Hidden("idclienteInserido", (int)ViewBag.idCliente);
+
+            <div class="display-label">
+                @Html.DisplayNameFor(Model => Model.telefone);
+            </div>
+            <div class="display-fields">
+                @Html.EditorFor(Model => Model.telefone);
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayNameFor(Model => Model.email);
+            </div>
+
+            <div class="display-fields">
+                @Html.DisplayFor(Model => Model.email);
+            </div>
+            <div>
+
+                <input type="submit" value ="Editar" /> 
+        
+            </div>
+ </fieldset>
+}
+    <div>
+
+    @Html.ActionLink("Home", "Index", "Cliente");
+    
+
+    </div> 
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+ }

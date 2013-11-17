@@ -1,0 +1,68 @@
+﻿@model Rep.Cliente_Endereco
+@{
+    ViewBag.Title = "DeletarEndereco";
+}
+
+<h2>Deletar Endereço</h2>
+@Html.BeginForm(){
+<fieldset>
+    <legend>Endereco</legend>
+    
+     @Html.Hidden("idClienteInserido",(int)ViewBag.idCliente)
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.rua)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.rua)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.complemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.complemento)
+    </div>
+
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.cep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cep)
+    </div>
+    
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bairro)
+    </div>
+      
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.cidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cidade)
+    </div>
+     <div class="display-label">
+         @Html.DisplayNameFor(model => model.estado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estado)
+    </div>
+ 
+       <p>
+        <input type="submit" value="Deletar" /> 
+        @Html.ActionLink("Home", "Index", "home")
+    </p>
+           
+</fieldset>
+ 
+}

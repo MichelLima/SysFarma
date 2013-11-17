@@ -25,19 +25,10 @@ namespace Rep
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Tabela_Pedido> Tabela_Pedido { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Cliente_Contato> Cliente_Contato { get; set; }
-        public DbSet<Cliente_Endereco> Cliente_Endereco { get; set; }
+        public DbSet<Cliente_Contato> Cliente_ContatoSet { get; set; }
+        public DbSet<Cliente_Endereco> Cliente_EnderecoSet { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
-
-        public System.Data.EntityState added { get; set; }
-
-        internal System.Data.EntityState Modified()
-        {
-            throw new NotImplementedException();
-        }
-
-        public System.Data.EntityState Delete { get; set; }
     }
 }

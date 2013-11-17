@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Rep.Produto>  
+
+
+
+<h2>Listar Produto</h2>
+
+<table border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.preco)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.lote)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.validade)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.validade)
+            </td>
+            <td>
+                @Html.ActionLink("Editar produto", "EditarProduto", new { id = item.id})
+            </td>
+            <td>
+                @Html.ActionLink("Deletar produto", "DeletarProduto", new { id = item.id})
+            
+            </td>
+        </tr>
+        
+    }
+</table>
+
+@Html.ActionLink("Home", "Index","Home")

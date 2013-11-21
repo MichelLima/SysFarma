@@ -1,0 +1,33 @@
+﻿@model SysFarma_Asp_Aplicacao.Models.ClienteCompleto
+
+@{
+    ViewBag.Title = "ListarClienteId";
+}
+
+<h2>ListarClienteId</h2>
+
+<fieldset>
+
+    <legend>Lista</legend>
+   <div class="display-label">
+        @Html.DisplayNameFor(model => model.cliente.nome)
+    </div>
+
+    <div class="display-field">
+         @Html.DisplayFor(model => model.cliente.cpf)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.cliente.cpf)
+    </div>
+
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cliente.cpf)
+    </div>
+
+
+
+
+
+
+</fieldset>

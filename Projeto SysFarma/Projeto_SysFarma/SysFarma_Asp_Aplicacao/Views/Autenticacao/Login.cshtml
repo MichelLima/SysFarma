@@ -12,7 +12,7 @@
 
     @TempData["loginObrigatorio"]
     
-    <fieldset>
+    <fieldset >
         <legend>Login</legend>
 
         <div class="editor-label">
@@ -32,9 +32,9 @@
         </div>
 
         <p>
-            <input type="submit" value="Criar" />
+            <input type="submit" value="Autenticar" />
             @Html.ActionLink("Cadastrar","CadastrarCliente","Home")
-            @Html.ActionLink("Pagina Inicial", "Index","Home")
+            @Html.ActionLink("Home", "Index","Home")
 
         </p>
     </fieldset>

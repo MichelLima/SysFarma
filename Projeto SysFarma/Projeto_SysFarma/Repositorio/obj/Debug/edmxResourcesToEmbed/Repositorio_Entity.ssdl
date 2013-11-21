@@ -7,6 +7,7 @@
     <EntitySet Name="Pedido" EntityType="bd_SysFarmaModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pedido_Produto" EntityType="bd_SysFarmaModel.Store.Pedido_Produto" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Produto" EntityType="bd_SysFarmaModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="bd_SysFarmaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_Tabela_Pedido_tbl_Cliente" Association="bd_SysFarmaModel.Store.FK_Tabela_Pedido_tbl_Cliente">
       <End Role="Cliente" EntitySet="Cliente" />
       <End Role="Pedido" EntitySet="Pedido" />
@@ -92,6 +93,16 @@
     <Property Name="descricao" Type="varchar" MaxLength="200" />
     <Property Name="validade" Type="smalldatetime" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <Association Name="FK_Tabela_Pedido_tbl_Cliente">
     <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
     <End Role="Pedido" Type="bd_SysFarmaModel.Store.Pedido" Multiplicity="*" />
@@ -117,7 +128,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbl_Cliente_Endereco_tbl_Cliente">
-    <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Cliente_Endereco" Type="bd_SysFarmaModel.Store.Cliente_Endereco" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Cliente">

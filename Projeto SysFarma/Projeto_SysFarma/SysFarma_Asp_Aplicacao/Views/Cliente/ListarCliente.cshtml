@@ -1,5 +1,6 @@
-﻿@model IEnumerable<Rep.Cliente>  
-<h2>ListarCliente</h2>
+﻿@model IEnumerable<Rep.Cliente>
+
+<h2>Listar Cliente</h2>
 
 <table border="1">
 
@@ -13,10 +14,11 @@
         <th>
             @Html.DisplayNameFor(model => model.dataNascimento)
         </th>
-        
+
     </tr>
 
-    @foreach (var item in Model) { 
+    @foreach (var item in Model)
+    { 
     
         <tr>
             <td>
@@ -29,12 +31,62 @@
                 @Html.DisplayFor(modelItem => item.dataNascimento)
             </td>
             <td>
-                @Html.ActionLink("Editar Cliente", "EditarCliente", new { id = item.id_Cliente})
-                @Html.ActionLink("Deletar Cliente", "DeletarCliente", new { id = item.id_Cliente})
+                @Html.ActionLink("Editar Cliente", "EditarCliente", new { id = item.id_Cliente })
+                @Html.ActionLink("Deletar Cliente", "DeletarCliente", new { id = item.id_Cliente })
             </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                @foreach (var endereco in item.Cliente_Endereco)
+                {
+                <div id="idEndereco">    
+                    <table border="1">                                                   
+                    
+                        <tr>
+                            <th>Endereço :</th>
+                            <td>
+                                @endereco.rua   
+                            </td>
+                            <td>
+                                @endereco.numero
+                            </td>
+
+                            <td>
+                                @endereco.complemento
+                            </td>
+                                                        
+                            <td>
+                                @endereco.cep
+                            </td>
+
+                            <td>
+                                 @endereco.bairro
+                            </td>
+
+                            <td>
+                                 @endereco.cidade
+                            </td>
+
+                            <td>
+                                  @endereco.estado
+                            </td>
+                            <td>
+                                 @Html.ActionLink("Editar", "AlterarEndereco", "Endereco", new { id = endereco.id }, new { })
+                                 @Html.ActionLink("Excluir", "DeletarEndereco", "Endereco", new { id = endereco.id }, new { })
+                            </td>     
+                        </tr>
+                        
+                        
+                    </table>
+                </div>
+                 
+                }
+               
+            </td>
+           
         </tr>
         
     }
 </table>
 
-@Html.ActionLink("Home", "Index","Home")
+@Html.ActionLink("Home", "Index", "Home")

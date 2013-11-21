@@ -84,6 +84,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Repositorio_Entity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Repositorio_Entity.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Repositorio_Entity.edmx">

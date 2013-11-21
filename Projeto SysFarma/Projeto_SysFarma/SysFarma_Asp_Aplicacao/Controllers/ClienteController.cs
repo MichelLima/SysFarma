@@ -64,7 +64,7 @@ namespace SysFarma_Asp.Controllers
 
                 bd.Entry(cliente).State = EntityState.Modified;
                 bd.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Home", "Index");
             }
             return View(cliente);
         }
@@ -81,6 +81,12 @@ namespace SysFarma_Asp.Controllers
 
             return View(clientes);
 
+        }
+
+        public ActionResult ListarClienteId()
+        {
+            SysFarma_Asp_Aplicacao.Models.ClienteCompleto cliente = new SysFarma_Asp_Aplicacao.Models.ClienteCompleto();
+            return View(cliente);        
         }
 
               protected override void OnActionExecuting(ActionExecutingContext filterContext)

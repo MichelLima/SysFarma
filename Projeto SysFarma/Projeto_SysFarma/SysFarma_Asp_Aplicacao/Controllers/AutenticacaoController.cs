@@ -48,5 +48,13 @@ namespace SysFarma_Asp_Aplicacao.Controllers
             return RedirectToAction("Login");
         }
 
+        public ActionResult LogOut()
+        {
+            SessaoUsuario.UsuarioLogado = null;
+            return RedirectToAction("Index","Home");
+        
+        }
+
     }
+   
 }

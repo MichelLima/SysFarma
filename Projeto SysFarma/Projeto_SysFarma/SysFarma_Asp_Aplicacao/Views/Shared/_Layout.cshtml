@@ -12,7 +12,11 @@
     <div id="tudo">
         <div id="cabecalho">
             <h1>SysFarma</h1>
-        </div>
+           <div id="cxLogin">
+               @Html.ActionLink("Login","Login","Autenticacao")
+               @Html.ActionLink("LogOut","LogOut","Autenticacao")
+           </div> 
+       </div>
         
         <div id="conteudo">   
              @RenderBody()

@@ -30,5 +30,6 @@ namespace Rep
         public DbSet<Cliente_Endereco> Cliente_EnderecoSet { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

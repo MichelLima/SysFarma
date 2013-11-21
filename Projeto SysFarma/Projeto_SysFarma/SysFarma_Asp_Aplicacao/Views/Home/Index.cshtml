@@ -3,11 +3,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<h1>Pagina inicial aqui!</h1>
+
 @Html.ActionLink("Cadastrar", "CadastrarCliente", "Home")
 @Html.ActionLink("Home", "Index", "Home")
 @Html.ActionLink("Listar Cliente", "ListarCliente", "Cliente")
+@Html.ActionLink("Produtos","ListarProduto","Produto")
 
 <table border="1">
 
@@ -58,13 +58,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.validade)
-            </td>
-            <td>
-                @Html.ActionLink("Editar produto", "EditarProduto","Produto")
-            </td>
-            <td>
-                @Html.ActionLink("Deletar produto", "DeletarProduto","Produto")
-            
             </td>
         </tr>
         

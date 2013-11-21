@@ -1,7 +1,7 @@
 ﻿@model Rep.Produto
 
 @{
-    ViewBag.Title = "EditarProduto";
+    ViewBag.Title = "Editar Produto";
 }
 
 <h2>Editar Produto</h2>
@@ -11,6 +11,8 @@
 <fieldset>
 
     <legend>Editar Produto </legend>
+
+    @Html.HiddenFor(Model => Model.id)
 
     <div class="display-label">
         @Html.DisplayNameFor(Model => Model.nome)
@@ -72,7 +74,7 @@
 }
     <div>
 
-    @Html.ActionLink("Home", "Index", "Cliente");
+    @Html.ActionLink("Home", "Index", "Home")
     
 
     </div> 

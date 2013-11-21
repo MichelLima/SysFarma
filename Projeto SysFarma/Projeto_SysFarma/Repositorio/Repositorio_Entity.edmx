@@ -12,6 +12,7 @@
           <EntitySet Name="Pedido" EntityType="bd_SysFarmaModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pedido_Produto" EntityType="bd_SysFarmaModel.Store.Pedido_Produto" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Produto" EntityType="bd_SysFarmaModel.Store.Produto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="bd_SysFarmaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Tabela_Pedido_tbl_Cliente" Association="bd_SysFarmaModel.Store.FK_Tabela_Pedido_tbl_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Pedido" EntitySet="Pedido" />
@@ -97,6 +98,16 @@
           <Property Name="descricao" Type="varchar" MaxLength="200" />
           <Property Name="validade" Type="smalldatetime" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_Tabela_Pedido_tbl_Cliente">
           <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
           <End Role="Pedido" Type="bd_SysFarmaModel.Store.Pedido" Multiplicity="*" />
@@ -122,7 +133,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tbl_Cliente_Endereco_tbl_Cliente">
-          <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cliente" Type="bd_SysFarmaModel.Store.Cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Cliente_Endereco" Type="bd_SysFarmaModel.Store.Cliente_Endereco" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cliente">
@@ -183,6 +196,7 @@
             <End Role="Pedido" EntitySet="Pedido" />
             <End Role="Produto1" EntitySet="Produto" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="bd_SysFarmaModel.sysdiagrams" />
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -288,6 +302,16 @@
           <End Type="bd_SysFarmaModel.Pedido" Role="Pedido" Multiplicity="*" />
           <End Type="bd_SysFarmaModel.Produto" Role="Produto1" Multiplicity="*" />
         </Association>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -363,6 +387,17 @@
               <ScalarProperty Name="numero" ColumnName="numero" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="bd_SysFarmaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

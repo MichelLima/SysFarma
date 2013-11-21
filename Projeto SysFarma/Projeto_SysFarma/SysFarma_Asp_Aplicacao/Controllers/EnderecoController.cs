@@ -37,7 +37,7 @@ namespace SysFarma_Asp_Aplicacao.Controllers
       
         }
 
-        public ActionResult AlterarEndereco(int id) {
+        public ActionResult AlterarEndereco(int id= 0) {
             
             Cliente_Endereco endereco = bd.Cliente_EnderecoSet.Find(id);
             
@@ -57,7 +57,7 @@ namespace SysFarma_Asp_Aplicacao.Controllers
                 RepoEndereco repositorio = new RepoEndereco();
                 repositorio.AlterarEndereco(endereco);
                 bd.SaveChanges();
-                return RedirectToAction("Index", "Home");         
+                return RedirectToAction("ListarCliente", "Cliente");         
             }
             return View(endereco);               
         }
@@ -100,7 +100,7 @@ namespace SysFarma_Asp_Aplicacao.Controllers
            
             bd.Cliente_EnderecoSet.Remove(endereco);
             bd.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ListarCliente", "Cliente");
         }
 
 

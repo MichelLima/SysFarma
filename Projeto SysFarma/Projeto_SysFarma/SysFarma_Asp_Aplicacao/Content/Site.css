@@ -30,6 +30,23 @@ header, footer, nav, section {
     font-family:'Arial Black', Gadget, sans-serif;
     
 }
+#cxLogin{
+    position:absolute;
+    right: 0 ;
+    }
+* a {
+        font-size : 18px;    
+        text-decoration:none;
+        list-style:none;
+    }
+
+* a:hover {
+
+        font-size : 24px;    
+        text-decoration:underline;
+        list-style:none;    
+}
+
 #cabecalho h1{
     color: #6c0bae;
     font-size: 50px;
@@ -55,6 +72,12 @@ header, footer, nav, section {
     left: 50%;
     margin-left: -440px;
      
+}
+
+#idEndereco {
+
+    background-color:#efa2a2;
+
 }
 
 

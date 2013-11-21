@@ -139,6 +139,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteCompleto.cs" />
     <Compile Include="Models\ClienteEndereco.cs" />
     <Compile Include="Models\ClienteModelList.cs" />
     <Compile Include="Models\CotatoCliente.cs" />
@@ -250,6 +251,7 @@
     <Content Include="Views\Produto\EditarProduto.cshtml" />
     <Content Include="Views\Produto\ListarProduto.cshtml" />
     <Content Include="Views\Autenticacao\Login.cshtml" />
+    <Content Include="Views\Cliente\ListarClienteId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

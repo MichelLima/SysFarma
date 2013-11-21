@@ -4,13 +4,13 @@
 }
 
 <h2>Cadastrar Contato</h2>
-@Html.BeginForm(){
+@using(Html.BeginForm()){
 
     
-    @Html.ValidationSummary(true);
+    @Html.ValidationSummary(true)
 
 <fieldset>
-     @Html.Hidden("idclienteInserido", (int)ViewBag.idCliente);
+     @Html.Hidden("idclienteInserido", (int)ViewBag.idCliente)
 
     <legend>Cadastro de Contato</legend>
     <div>
@@ -18,7 +18,7 @@
     </div>
     <div>
         @Html.EditorFor(model => model.telefone)
-        @Html.ValidationMessageFor(model => model.telefone);
+        @Html.ValidationMessageFor(model => model.telefone)
     </div>
 
     <div>
@@ -26,7 +26,7 @@
     </div>
     <div>
         @Html.EditorFor(model => model.email)
-        @Html.ValidationMessageFor(model => model.email);
+        @Html.ValidationMessageFor(model => model.email)
     </div>
     <p>
         <input type="submit" value="Cadastrar" />

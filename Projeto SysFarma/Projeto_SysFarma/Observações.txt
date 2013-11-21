@@ -1,6 +1,4 @@
 
 Observações:
 
-
-2	Verificar metodo Editar Contato
-4	Organizar a infraEstrutura do projeto
+1  Verificar como listar informações completa do cliente (informações pessoais, endereço, contato)

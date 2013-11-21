@@ -22,6 +22,7 @@
       <End Role="Pedido" EntitySet="Pedido" />
       <End Role="Produto1" EntitySet="Produto" />
     </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="bd_SysFarmaModel.sysdiagrams" />
   </EntityContainer>
   <EntityType Name="Cliente">
     <Key>
@@ -127,4 +128,14 @@
     <End Type="bd_SysFarmaModel.Pedido" Role="Pedido" Multiplicity="*" />
     <End Type="bd_SysFarmaModel.Produto" Role="Produto1" Multiplicity="*" />
   </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
 </Schema>

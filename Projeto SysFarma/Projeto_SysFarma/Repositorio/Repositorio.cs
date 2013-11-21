@@ -17,7 +17,7 @@ namespace Rep
 
             using (bd_SysFarmaEntities db_Context = new bd_SysFarmaEntities())
             {
-
+                    
                 db_Context.Entry(cliente).State = EntityState.Added;
                 db_Context.SaveChanges();
             }
@@ -34,15 +34,14 @@ namespace Rep
                 db_context.SaveChanges();
             }
         }
-        public void RemoverCliente(int id_cliente)
+        public void RemoverCliente(int id)
         {
 
             using (bd_SysFarmaEntities bd_context = new bd_SysFarmaEntities())
             {
 
                 Cliente cliente = new Cliente();
-                cliente.id_Cliente = id_cliente;
-
+                cliente.id_Cliente = id; 
                 bd_context.Entry(cliente).State = EntityState.Deleted;
                 bd_context.SaveChanges();
 
@@ -68,7 +67,7 @@ namespace Rep
 
             using (bd_SysFarmaEntities bd_Context = new bd_SysFarmaEntities()) {
 
-                clientes = (from c in bd_Context.Cliente
+                clientes = (from c in bd_Context.Cliente.Include(cliente => cliente.Cliente_Endereco)
                             select c).ToList();
              }
             return clientes;       

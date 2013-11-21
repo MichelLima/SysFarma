@@ -24,8 +24,10 @@ namespace SysFarma_Asp.Models
         public String login { get; set; }
         [Required]
         [DataType(DataType.Password)]
+
         public String senha { get; set; }
         [Compare("senha", ErrorMessage= "as senhas não comferem")]
+
         [DataType(DataType.Password)]
         public String confirmarSenha { get; set; }
     }

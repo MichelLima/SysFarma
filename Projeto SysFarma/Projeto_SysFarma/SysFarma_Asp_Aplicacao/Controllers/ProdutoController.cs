@@ -37,8 +37,10 @@ namespace SysFarma_Asp_Aplicacao.Controllers
 
         public ActionResult DeletarProduto(int id = 0)
         {
+            RepositorioProduto repositorio = new RepositorioProduto();
+            Produto produto = repositorio.getProduto(id);
 
-            Produto produto = bd.Produto.Find(id);
+           // Produto produto = bd.Produto.Find(id);
             if (produto == null)
             {
 
@@ -61,13 +63,14 @@ namespace SysFarma_Asp_Aplicacao.Controllers
         public ActionResult EditarProduto(int id = 0)
         {
 
-            Produto Produto = bd.Produto.Find(id);
-            if (Produto == null)
+            Produto produto = bd.Produto.Find(id);
+           
+            if (produto == null)
             {
 
                 return HttpNotFound();
             }
-            return View(Produto);
+            return View(produto);
         }
 
         [HttpPost]

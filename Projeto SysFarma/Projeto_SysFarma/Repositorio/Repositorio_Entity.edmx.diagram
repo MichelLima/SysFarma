@@ -14,6 +14,7 @@
         <AssociationConnector Association="bd_SysFarmaModel.FK_tbl_Cliente_Contato_tbl_Cliente1" />
         <AssociationConnector Association="bd_SysFarmaModel.FK_tbl_Cliente_Endereco_tbl_Cliente1" />
         <AssociationConnector Association="bd_SysFarmaModel.Pedido_Produto" />
+        <EntityTypeShape EntityType="bd_SysFarmaModel.sysdiagrams" Width="1.5" PointX="3.07697695264452" PointY="8.7680646519959282" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

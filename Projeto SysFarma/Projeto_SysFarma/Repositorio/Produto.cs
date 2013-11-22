@@ -27,6 +27,7 @@ namespace Rep
         public string lote { get; set; }
         public string descricao { get; set; }
         public Nullable<System.DateTime> validade { get; set; }
+        public Nullable<int> quantidade { get; set; }
     
         public virtual ICollection<Pedido> Pedido { get; set; }
     }

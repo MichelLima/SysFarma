@@ -83,6 +83,13 @@ namespace SysFarma_Asp.Controllers
 
         }
 
+        ActionResult Resultado()
+        {
+            return View();       
+        
+        }
+
+
         public ActionResult ListarClienteId()
         {
             SysFarma_Asp_Aplicacao.Models.ClienteCompleto cliente = new SysFarma_Asp_Aplicacao.Models.ClienteCompleto();

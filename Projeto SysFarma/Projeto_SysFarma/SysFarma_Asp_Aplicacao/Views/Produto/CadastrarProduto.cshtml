@@ -51,6 +51,14 @@
     </div>
 
     <div>
+        @Html.LabelFor(model => model.quantidade)
+    </div>
+    <div>
+        @Html.EditorFor(model => model.quantidade)
+        @Html.ValidationMessageFor(model => model.quantidade)
+    </div>
+
+    <div>
         @Html.LabelFor(model => model.descricao)
     </div>
     <div>

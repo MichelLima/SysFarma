@@ -15,6 +15,7 @@ namespace SysFarma_Asp.Models
         public String lote { get; set; }
         public String descricao { get; set; }
         public DateTime validade { get; set; }
+        public int quantidade { get; set; }
 
     }
 }

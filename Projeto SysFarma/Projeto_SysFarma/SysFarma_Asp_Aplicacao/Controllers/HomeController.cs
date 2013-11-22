@@ -15,6 +15,7 @@ namespace SysFarma_Asp_Aplicacao.Controllers
 
         public ActionResult Index(string q, int? numvezes)
         {
+            
             RepositorioProduto repositorio = new RepositorioProduto();
 
             List<Rep.Produto> clientes = repositorio.GetTodosProduto();
@@ -38,12 +39,6 @@ namespace SysFarma_Asp_Aplicacao.Controllers
             if (ModelState.IsValid)
             {
 
-                /*if (cliente.nome == bd.Cliente.Find(nome)) ;
-                  
-                    cliente = (from c in bd.Cliente.Include("Cliente_Endereco")
-                               where c.nome == cliente.nome && c.cpf == cliente.cpf
-                               select c).FirstOrDefault();*/               
-               
                 Repositorio repositorio = new Repositorio();
                 repositorio.InserirCliente(cliente);
                 return RedirectToAction("CadastroEndereco", "Endereco", new { idCliente = cliente.id_Cliente });

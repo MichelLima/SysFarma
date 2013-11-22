@@ -42,7 +42,7 @@ namespace SysFarma_Asp_Aplicacao.Controllers
             {
                 //Variável de sessão
                 SessaoUsuario.UsuarioLogado = cliente;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", new { nome = cliente.nome});
             }
 
             return RedirectToAction("Login");

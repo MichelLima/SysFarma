@@ -51,6 +51,7 @@
     <EntitySetMapping Name="Produto">
       <EntityTypeMapping TypeName="bd_SysFarmaModel.Produto">
         <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
           <ScalarProperty Name="validade" ColumnName="validade" />
           <ScalarProperty Name="descricao" ColumnName="descricao" />
           <ScalarProperty Name="lote" ColumnName="lote" />

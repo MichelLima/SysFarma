@@ -87,6 +87,7 @@
     <Property Type="String" Name="descricao" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="validade" Precision="0" />
     <NavigationProperty Name="Pedido" Relationship="bd_SysFarmaModel.Pedido_Produto" FromRole="Produto1" ToRole="Pedido" />
+    <Property Type="Int32" Name="quantidade" />
   </EntityType>
   <Association Name="FK_Tabela_Pedido_tbl_Cliente1">
     <End Type="bd_SysFarmaModel.Cliente" Role="Cliente1" Multiplicity="1" />

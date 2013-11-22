@@ -92,6 +92,7 @@
     <Property Name="lote" Type="varchar" MaxLength="50" />
     <Property Name="descricao" Type="varchar" MaxLength="200" />
     <Property Name="validade" Type="smalldatetime" />
+    <Property Name="quantidade" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
